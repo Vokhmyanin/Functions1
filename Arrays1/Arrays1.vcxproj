@@ -19,7 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FillRand.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="Sfhifts.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Source1.cpp" />
+    <ClCompile Include="Statistics.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="FillRand.h" />
+    <ClInclude Include="Print.h" />
+    <ClInclude Include="Shifts.h" />
+    <ClInclude Include="Sort.h" />
+    <ClInclude Include="Statistics.h" />
+    <ClInclude Include="using.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
