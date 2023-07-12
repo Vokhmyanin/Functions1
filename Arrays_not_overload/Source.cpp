@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-template <class A> void FillRand(A arr[], const int n);
+ void FillRand(int arr[], const int n);
 template <class A> void Print(A arr[], const int n);
 template <class A> void Sort(A arr[], const int n);
 template <class A> A Sum(A arr[], const int n);
@@ -24,7 +24,7 @@ void main()
 	cout << "Максимальное значение в массиве : " << Max(arr, n) << endl;
 
 }
-template <class A> void FillRand(A arr[], const int n)
+ void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
