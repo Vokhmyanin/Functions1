@@ -17,7 +17,7 @@
 
 
 
-void main()
+/*void main()
 {
 	setlocale(LC_ALL, "");
 	const int n = 5;
@@ -47,7 +47,7 @@ void main()
 
 
 
-}
+}*/
 
 
 
