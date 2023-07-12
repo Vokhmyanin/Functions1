@@ -1,13 +1,18 @@
 #include"stdafx.h"
-#include"Template_FillRand.h"
+#include"Template_FillRand.cpp"
 #include"Template_Print.cpp"
+#include"Template_Sort.cpp"
+#include"Template_Sum.cpp"
+#include"Template_Average.cpp"
+#include"Template_Min.cpp"
+#include"Template_Max.cpp"
 
 
-template <class A> void Sort(A arr[], const int n);
-template <class A> A Sum(A arr[], const int n);
-template <class A> A Average(A arr[], const int n);
-template <class A> A Min(A arr[], const int n);
-template <class A> A Max(A  arr[], const int n);
+
+
+
+
+
 
 void main()
 {
@@ -25,51 +30,8 @@ void main()
 
 }
 
+ 
 
-template <class A> void Sort(A arr[], const int n)
-{
-	for (int j = 0; j < n; j++)
-	{
-		for (int i = 0; i < n - 1; i++)
-		{
-			if (arr[i] > arr[i + 1])
-			{
-				A buf = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = buf;
-			}
-		}
-	}
-}
-template <class A> A Sum(A arr[], const int n)
-{
-	A summ = 0;
-	for (int i = 0; i < n; i++)
-	{
-		summ += arr[i];
-	}
-	return(A)summ;
-}
-template <class A> A Average(A arr[], const int n)
-{
-	A avg = Sum(arr, n) / n;
-	return (A)avg;
-}
-template <class A> A Min(A arr[], const int n)
-{
-	A min = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (arr[i] < min) min = arr[i];
-	}
-	return min;
-}
-template <class A> A Max(A arr[], const int n)
-{
-	A max = arr[0];
-	for (int i = 0; i < n; i++)
-	{
-		if (arr[i] > max) max = arr[i];
-	}
-	return max;
-}
+
+
+
