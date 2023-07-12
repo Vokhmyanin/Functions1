@@ -1,8 +1,8 @@
-#include<iostream>
-using namespace std;
+#include"stdafx.h"
+#include"Template_FillRand.h"
+#include"Template_Print.cpp"
 
-template <class A> void FillRand(A arr[], const int n);
-template <class A> void Print(A arr[], const int n);
+
 template <class A> void Sort(A arr[], const int n);
 template <class A> A Sum(A arr[], const int n);
 template <class A> A Average(A arr[], const int n);
@@ -12,8 +12,8 @@ template <class A> A Max(A  arr[], const int n);
 void main()
 {
 	setlocale(LC_ALL, "");
-	const int n = 5;
-	int arr[n];
+	const int  n = 5;
+	int  arr[n];
 	FillRand(arr, n);
 	Print(arr, n); cout << endl;
 	Sort(arr, n);
@@ -24,20 +24,8 @@ void main()
 	cout << "Максимальное значение в массиве : " << Max(arr, n) << endl;
 
 }
-template <class A> void FillRand(A arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % 100;
-	}
-}
-template <class A> void Print(A arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-}
+
+
 template <class A> void Sort(A arr[], const int n)
 {
 	for (int j = 0; j < n; j++)
