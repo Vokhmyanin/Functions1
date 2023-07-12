@@ -1,15 +1,27 @@
 #include<iostream>
 using namespace std;
+#define tab "\t"
+#define delimiter "\n----------------------------------\n"
+
+const int ROWS = 3;
+const int COLS = 4;
 
 
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(char arr[], const int n);
 
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
+void FillRand(char arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Print(const int arr[], const int n);
 void Print(const double arr[], const int n);
 void Print(char arr[], const int n);
+
+void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS);
+void Print(const double arr[ROWS][COLS], const int ROWS, const int COLS);
+void Print(char arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
@@ -19,9 +31,17 @@ int Sum(const int arr[], const int n);
 double Sum(const double  arr[], const int n);
 char Sum(char  arr[], const int n);
 
+int Sum(const int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Sum(const double arr[ROWS][COLS], const int ROWS, const int COLS);
+char Sum(char arr[ROWS][COLS], const int ROWS, const int COLS);
+
 double Average(const int arr[], const int n);
 double Average(double const arr[], const int n);
 double Average(char arr[], const int n);
+
+double Avg(const int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Avg(const double arr[ROWS][COLS], const int ROWS, const int COLS);
+
 
 int Min(int arr[], const int n);
 double Min(const double arr[], const int n);
@@ -48,12 +68,20 @@ void main()
 	Print(arr, n); cout << endl;
 
 
+
 	Sort(arr, n);
 	Print(arr, n); cout << endl;
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
 	cout << "Среднее арифметическое : " << Average(arr, n) << endl;
 	cout << "Минимальное значение в массиве : " << Min(arr, n) << endl;
 	cout << "Максимальное значение в массиве : " << Max(arr, n) << endl;
+
+	int i_arr_2[ROWS][COLS];
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+	cout << "Сумма элементов массива:\t" << Sum(i_arr_2, ROWS, COLS) << endl;
+	cout << "Среднее-арифметическое элементов массива:\t" << Avg(i_arr_2, ROWS, COLS) << endl;
+
 	Left(arr, n);
 	Print(arr, n); cout << endl;
 	Right(arr, n);
@@ -85,6 +113,36 @@ void FillRand(char arr[], const int n)
 		arr[i] /= 100;
 	}
 }
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
+void FillRand(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
+	}
+}
 void Print(const int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
@@ -104,6 +162,39 @@ void Print(char arr[], const int n)
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
+	}
+}
+void Print(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << tab;
+		}
+		cout << endl;
+	}
+}
+void Print(const double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << tab;
+		}
+		cout << endl;
+	}
+}
+void Print(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << tab;
+		}
+		cout << endl;
 	}
 }
 void Sort(int arr[], const int n)
@@ -178,6 +269,42 @@ char Sum(char  arr[], const int n)
 	}
 	return summ;
 }
+int Sum(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return sum;
+}
+double Sum(const double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return (double)sum;
+}
+char Sum(char arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	char sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return (char)sum;
+}
 double Average(const int arr[], const int n)
 {
 	double avg = Sum(arr, n) / n;
@@ -193,6 +320,15 @@ double Average(char arr[], const int n)
 	double avg = Sum(arr, n) / n;
 	return (double)avg;
 }
+double Avg(const int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
+double Avg(const double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS, COLS) / (ROWS * COLS);
+}
+
 int Min(int arr[], const int n)
 {
 	int min = arr[0];
